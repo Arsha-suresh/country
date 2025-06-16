@@ -1,0 +1,22 @@
+<div id="searchContainer">
+    <form (ngSubmit)="Submit()" [formGroup]="forms">
+    <span><input type="search" formControlName="search"/></span>
+    <span><select formControlName="type">
+            @for(item of searchBylist; track item){
+            <option value={{item}}>Search by {{item |titlecase}}</option>
+            }
+
+        </select>
+    </span>
+    @if(this.forms.dirty){
+    @if(this.forms.get('search')?.errors){
+        <div class="red">Enter search value</div>
+    }
+    @if(this.forms.get('type')?.errors){
+        <div class="red">Enter search type</div>
+    }}
+    
+    <div><button id="submit" type="submit"  [ngClass]="{'disabled':!forms.valid}" [disabled] ="!forms.valid">Search</button></div>
+    
+    </form>
+</div>

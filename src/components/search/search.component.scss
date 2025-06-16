@@ -1,0 +1,26 @@
+#searchContainer {
+   padding-left:20%;
+   margin-top:1%;
+   input, select, #submit{
+   font-size:18px;
+   height:60px;
+   width:40%;
+   background-color:white ;
+   background-image: linear-gradient(white,white);
+   
+   }
+   #submit{
+   font-size:18px;
+   height:60px;
+   margin-left:25%;
+   margin-top:5%;
+   background-image: linear-gradient(rgb(3, 78, 7),rgb(4, 56, 3));
+   color:white;
+   }
+   .red{
+    color:red;
+   }
+   #submit.disabled{
+    background-image: linear-gradient(rgb(87, 88, 87),rgb(46, 48, 46));
+   }
+}

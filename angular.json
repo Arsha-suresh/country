@@ -16,10 +16,12 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
+          
           "options": {
             "outputPath": "dist/country",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "aot":true,
             "polyfills": [
               "zone.js"
             ],

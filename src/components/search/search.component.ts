@@ -1,5 +1,5 @@
 import { CommonModule, TitleCasePipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -16,10 +16,12 @@ export class SearchComponent {
      type: ['', Validators.required] }
 
   );
+  public userSelection = output<any>();
 
   public Submit() {
     console.log(this.forms?.valid);
     console.log(this.forms.get('search')?.errors);
+    this.userSelection.emit(this.forms.value);
 
   }
 

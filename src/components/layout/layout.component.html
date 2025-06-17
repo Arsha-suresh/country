@@ -2,7 +2,13 @@
     <h1 class="countryHeading">Explore Countries</h1>
 </header>
 <main>
-    <app-search></app-search>
+    <app-search (userSelection)="getUserSelection($event)"></app-search>
+    @if(searchResults() && !isError){
+    <app-results [searchResults]="searchResults()"></app-results>
+    }
+    @if(isError){
+        <div>Error  detected, please try with another search term</div>
+    }
 </main>
 <footer>
 
